@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h1> About Us </h1>
+{% endblock content %}
+
+
+{% block sidenav %}
+    {% for item in item_list %}
+        <li>
+            <a href="{{ item.link }}"> {{ item.item }} </a>
+        </li>
+    {% endfor %}
+{% endblock sidenav %}

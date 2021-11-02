@@ -1,0 +1,55 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            Title Document
+        {% endblock title %}
+    </title>
+    <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div>
+    <header>
+        <div id="logo">
+            <img src="{% static 'logo.jfif' %}" width="40" height ="40" alts="" />
+            <span style="float: right;">
+                {% if user.is_authenticated %}
+                    {{ user.username }}
+                    <a href="{% url 'logout' %}?next=/">Logout</a>
+                {% else %}
+                    Not Logged in
+                    <a href="{% url 'login' %}?next=/">Login</a>
+                {% endif %}
+            </span>
+        </div>
+
+        <div id="topbanner">
+            <img src="{% static 'topbanner.jpg' %}" width="800" height ="200" alts="" />
+        </div>
+    </header>
+    <aside id="leftsidebar">
+        <nav id="nav">
+            <ul>
+                {% block sidenav %}
+                <li>Menu 1</li>
+                <li>Menu 2</li>
+                <li>Menu 3</li>
+                {% endblock sidenav %}
+            </ul>
+        </nav>
+    </aside>
+    <section id="main">
+        {% block content %}
+        Hello World
+        {% endblock content %}
+    </section>
+    <footer  id="footer"> 2021 Fall CS3337 Django Web Design Project Team 4</footer>
+</div>
+
+</body>
+</html>

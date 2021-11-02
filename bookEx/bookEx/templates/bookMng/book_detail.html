@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h1 align="center"> Book detail </h1>
+<table align="center" border ="2" width="500">
+        <tr>
+            <td>
+                {{ book.name }}
+            </td>
+            <td>
+                <img src="{% static book.picture_path %}" width="60" height="60">
+            </td>
+            <td>
+                {{book.web}}
+            </td>
+            <td>
+                ${{book.price}}
+            </td>
+            <td>
+                {{book.publishdate}}
+            </td>
+        </tr>
+</table>
+{% endblock content %}
+
+
+{% block sidenav %}
+    {% for item in item_list %}
+        <li>
+            <a href="{{ item.link }}"> {{ item.item }} </a>
+        </li>
+    {% endfor %}
+{% endblock sidenav %}
