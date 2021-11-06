@@ -4,7 +4,7 @@
 {% block content %}
 <h1 align="center"> Book detail </h1>
 <table align="center" border ="2" width="500">
-        <tr>
+        <tr align="center">
             <td>
                 {{ book.name }}
             </td>
@@ -20,7 +20,21 @@
             <td>
                 {{book.publishdate}}
             </td>
+            <td>
+                ?/5 ★
+            </td>
         </tr>
+</table>
+
+<table align="center" border="2" width="500">
+    <tr align="center">
+        <td>
+        Your Rating
+        </td>
+        <td>
+            ★★★★★
+        </td>
+    </tr>
 </table>
 {% endblock content %}
 
