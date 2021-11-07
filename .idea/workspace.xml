@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+    <list default="true" id="2e8a95e6-16c3-4816-bb60-70f621498e84" name="Changes" comment="Fixed table bug/ added new books to the account aaaccc">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pythonspace.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pythonspace.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookEx/bookMng/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookMng/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookEx/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

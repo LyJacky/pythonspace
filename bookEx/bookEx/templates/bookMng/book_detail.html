@@ -1,79 +1,48 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block sidenav %}
-    {% for item in item_list %}
-       <li>
-           <a href="{{ item.link }}"> {{ item.item }} </a>
-       </li>
-    {% endfor %}
-{% endblock sidenav %}
-
 {% block content %}
-<h1 align="center"> Book Detail </h1>
-  <table align="center" border="2" width="500">
-        <tr>
+<h1 align="center"> Book detail </h1>
+<table align="center" border ="2" width="500">
+        <tr align="center">
             <td>
-                <b>Book Name</b>
+                {{book.name}}
             </td>
             <td>
-                <b>Book Image</b>
+                <img src="{% static book.picture_path %}" width="60" height="60">
             </td>
             <td>
-                <b>Author</b>
+                {{book.web}}
             </td>
             <td>
-                <b>Website</b>
+                ${{book.price}}
             </td>
             <td>
-                <b>Price</b>
+                {{book.publishdate}}
             </td>
             <td>
-                <b>Publication Date</b>
-            </td>
-            <td>
-                <b>Book Rating</b>
-            </td>
-            <td>
-                <b>Rate Book</b>
+                {{book.rating}}/5 ★
             </td>
         </tr>
-        <tr>
-            <td>
-                {{ book.name }}
-            </td>
-            <td>
-                <img src="{% static book.pic_path %}" width="60" height="60">
-            </td>
-            <td>
-                {{ book.username }}
-            </td>
-            <td>
-                {{ book.web }}
-            </td>
-            <td>
-                {{ book.price }}
-            </td>
-            <td>
-                {{ book.publishdate }}
-            </td>
-                        <td>
-                {{ book.avg_rating }}
-            </td>
-            <td>
-                <form action="" enctype="multipart/form-data" method="post" novalidate>
-                    <table>
-                        {{ form.as_table }}
-                        <tr>
-                            <td colspan="2">
-                                <input type="submit" value="Submit">
-                            </td>
-                        </tr>
-                    </table>
-                    {% csrf_token %}
-                </form>
-            </td>
-        </tr>
-  </table>
+</table>
+
+<table align="center" border="2" width="500">
+    <tr align="center">
+        <td>
+        Your Rating
+        </td>
+        <td>
+            ★★★★★
+        </td>
+    </tr>
+</table>
 {% endblock content %}
 
+
+{% block sidenav %}
+    {% for item in item_list %}
+        <li>
+            <a href="{{ item.link }}"> {{ item.item }} </a>
+        </li>
+    {% endfor %}
+{% endblock sidenav %}

@@ -1,7 +1,6 @@
 from django import forms
 from django.forms import ModelForm
 from .models import Book
-from .models import BookRating
 
 
 class BookForm(ModelForm):
@@ -14,10 +13,4 @@ class BookForm(ModelForm):
             'picture',
         ]
 
-class BookRatingForm(ModelForm):
-    class Meta:
-        model = BookRating
-        fields = [
-            'rating',
-        ]
-
+        
