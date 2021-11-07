@@ -7,6 +7,7 @@ from django.http import HttpResponse
 from .models import MainMenu
 from .forms import BookForm
 from .models import Book
+from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
@@ -112,5 +113,33 @@ def aboutus(request):
     return render(request,
                   'bookMng/aboutus.html',
                   {
+                      'item_list': MainMenu.objects.all()
+                  })
+
+@login_required(login_url=reverse_lazy('login'))
+def search(request):
+    if request.method == 'GET':
+        query = request.GET.get('b')
+
+        submitbutton = request.GET.get('submit')
+
+        if query is not None:
+            lookups = Q(id__icontains=query) | Q(name__icontains=query)
+
+            results = Book.objects.filter(lookups).distinct()
+
+            return render(request, 'bookMng/search.html', {
+                      'item_list': MainMenu.objects.all(),
+                      'results': results,
+                      'submitbutton': submitbutton,
+                  })
+
+        else:
+            return render(request, 'bookMng/search.html', {
+                      'item_list': MainMenu.objects.all()
+                  })
+
+    else:
+        return render(request, 'bookMng/search.html', {
                       'item_list': MainMenu.objects.all()
                   })

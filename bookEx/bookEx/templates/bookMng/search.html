@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h1 align="center"> Search For A Book In Our System</h1>
+    <div align="center">
+        <form action="{% url 'search' %}" method="GET" value="{{request.GET.b}}">
+            <input type="text" name="b" value="{{request.GET.b}}" placeholder="Search Books"/>
+            <input type="submit" name="submit" value="Search"/>
+        </form>
+
+        {% if submitbutton == 'Search' %}
+            {% if results %}
+                <h1>Results for <b>{{ request.GET.b }}</b></h1>
+                <br><br>
+                <table align="center" border="2" width="300" >
+                {% for result in results %}
+                    <tr>
+                    <td>
+                        <a href ="book_detail/{{ result.id }}"> {{ result.name }} </a>
+                    </td>
+                    <td>
+                        <img src="{% static result.pic_path %}" width="40" height="40">
+                    </td>
+                    <td>
+                        {{ result.username }}
+                    </td>
+                    </tr>
+                {% endfor %}
+                </table>
+                   {% else %}
+                    <h1>Book does not exist in system!</h1>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock content %}
+{% block sidenav %}
+    {% for item in item_list %}
+        <li>
+            <a href ="{{ item.link }}"> {{ item.item }} </a>
+        </li>
+    {% endfor %}
+{% endblock sidenav %}
