@@ -6,7 +6,7 @@
 <table align="center" border ="2" width="500">
         <tr align="center">
             <td>
-                {{ book.name }}
+                {{book.name}}
             </td>
             <td>
                 <img src="{% static book.picture_path %}" width="60" height="60">
@@ -21,7 +21,7 @@
                 {{book.publishdate}}
             </td>
             <td>
-                ?/5 ★
+                {{book.rating}}/5 ★
             </td>
         </tr>
 </table>
