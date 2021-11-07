@@ -75,6 +75,7 @@ def displaybooks(request):
                       'item_list': MainMenu.objects.all(),
                       'books': books,
                   })
+
 @login_required(login_url=reverse_lazy('login'))
 def book_detail(request, book_id):
     book = Book.objects.get(id=book_id)
