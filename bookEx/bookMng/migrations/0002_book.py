@@ -24,6 +24,7 @@ class Migration(migrations.Migration):
                 ('picture', models.FileField(upload_to='bookEx/static/uploads')),
                 ('picture_path', models.CharField(blank=True, editable=False, max_length=300)),
                 ('username', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('rating', models.DecimalField(decimal_places=2, max_digits=3)),
             ],
         ),
     ]

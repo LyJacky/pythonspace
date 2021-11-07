@@ -85,6 +85,7 @@ def book_detail(request, book_id):
                       'item_list': MainMenu.objects.all(),
                       'book': book,
                   })
+
 @login_required(login_url=reverse_lazy('login'))
 def book_delete(request, book_id):
     book = Book.objects.get(id=book_id)
@@ -94,6 +95,7 @@ def book_delete(request, book_id):
                   {
                       'item_list': MainMenu.objects.all(),
                   })
+
 @login_required(login_url=reverse_lazy('login'))
 def mybooks(request):
     books = Book.objects.filter(username=request.user)
