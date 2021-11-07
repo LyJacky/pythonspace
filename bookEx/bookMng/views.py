@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.shortcuts import render
 
 # Create your views here.
@@ -125,9 +126,15 @@ def search(request):
         submitbutton = request.GET.get('submit')
 
         if query is not None:
+            User = get_user_model()
+            users = User.objects.filter(username__icontains=query)
+            book_by_user = None
+            for user in users:
+                book_by_user = Q(username=user) or book_by_user
             lookups = Q(id__icontains=query) | Q(name__icontains=query)
-
-            results = Book.objects.filter(lookups).distinct()
+            results = Book.objects.filter(lookups).distinct() or Book.objects.filter(book_by_user).distinct()
+            for b in results:
+                b.picture_path = b.picture.url[14:]
 
             return render(request, 'bookMng/search.html', {
                       'item_list': MainMenu.objects.all(),

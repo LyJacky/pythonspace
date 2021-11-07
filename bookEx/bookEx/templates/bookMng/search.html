@@ -5,11 +5,11 @@
     <h1 align="center"> Search For A Book In Our System</h1>
     <div align="center">
         <form action="{% url 'search' %}" method="GET" value="{{request.GET.b}}">
-            <input type="text" name="b" value="{{request.GET.b}}" placeholder="Search Books"/>
+            <input type="text" name="b" value="{{request.GET.b}}" placeholder="Search Books by Title Or Username"/>
             <input type="submit" name="submit" value="Search"/>
         </form>
 
-        {% if submitbutton == 'Search' %}
+        {% if submitbutton == 'Search' and request.GET.b != ''%}
             {% if results %}
                 <h1>Results for <b>{{ request.GET.b }}</b></h1>
                 <br><br>
@@ -20,7 +20,7 @@
                         <a href ="book_detail/{{ result.id }}"> {{ result.name }} </a>
                     </td>
                     <td>
-                        <img src="{% static result.pic_path %}" width="40" height="40">
+                        <img src="{% static result.picture_path %}" width="60" height="60">
                     </td>
                     <td>
                         {{ result.username }}
