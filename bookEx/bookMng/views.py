@@ -6,8 +6,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from .models import MainMenu
-from .forms import BookForm
-from .models import Book
+from .forms import BookForm, BookRatingForm
+from .models import Book, BookRating
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import CreateView
@@ -76,16 +76,27 @@ def displaybooks(request):
                       'item_list': MainMenu.objects.all(),
                       'books': books,
                   })
+
 @login_required(login_url=reverse_lazy('login'))
 def book_detail(request, book_id):
     book = Book.objects.get(id=book_id)
-    print(book.name)
-    book.picture_path = book.picture.url[14:]
+    book.pic_path = book.picture.url[14:]
+    form = BookRatingForm(request.POST or None)
+    if request.method == 'POST':
+        if form.is_valid():
+            bookrating = form.save(commit=False)
+            book.total_rating = bookrating.rating + book.total_rating
+            book.times_rated = book.times_rated + 1
+            book.avg_rating = book.total_rating/book.times_rated
+            book.save()
+
+            return HttpResponseRedirect('/displaybooks')
     return render(request,
                   'bookMng/book_detail.html',
                   {
                       'item_list': MainMenu.objects.all(),
                       'book': book,
+                      'form': form,
                   })
 
 @login_required(login_url=reverse_lazy('login'))
