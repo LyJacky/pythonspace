@@ -19,8 +19,10 @@ class BookRating(models.Model):
                                  validators=[MinValueValidator(1.0), MaxValueValidator(5.0)], default=5)
 
     username = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
+
     def __str__(self):
         return str(self.rating) + str(self.id)
+
 
 class Book(models.Model):
     name = models.CharField(max_length=200)
