@@ -37,7 +37,6 @@ def index(request):
                     'item_list': MainMenu.objects.all()
 
                   })
-
 @login_required(login_url=reverse_lazy('login'))
 def postbook(request):
     submitted = False
@@ -70,6 +69,7 @@ def displaybooks(request):
     books = Book.objects.all()
     for b in books:
         b.picture_path = b.picture.url[14:]
+
     return render(request,
                   'bookMng/displaybooks.html',
                   {
@@ -85,9 +85,17 @@ def book_detail(request, book_id):
     if request.method == 'POST':
         if form.is_valid():
             bookrating = form.save(commit=False)
-            book.total_rating = bookrating.rating + book.total_rating
-            book.times_rated = book.times_rated + 1
-            book.avg_rating = book.total_rating/book.times_rated
+            # # print(book.map['test'])
+            # if book.map.get(request.user) is None:
+            #     book.map[request.user] = bookrating.rating
+            # total_rating = 0
+            # for books in book.map:
+            #    print(books)
+            #    total_rating += book.map[books]
+            # print(total_rating)
+            # print(321312312312)
+            # book.total_rating = bookrating.rating + book.total_rating
+            # book.avg_rating = total_rating/len(book.map)
             book.save()
 
             return HttpResponseRedirect('/displaybooks')

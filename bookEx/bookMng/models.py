@@ -14,6 +14,14 @@ class MainMenu(models.Model):
         return self.item
 
 
+class BookRating(models.Model):
+    rating = models.DecimalField(decimal_places=1, max_digits=2,
+                                 validators=[MinValueValidator(1.0), MaxValueValidator(5.0)], default=5)
+
+    username = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
+    def __str__(self):
+        return str(self.rating) + str(self.id)
+
 class Book(models.Model):
     name = models.CharField(max_length=200)
     web = models.URLField(max_length=200)
@@ -22,19 +30,20 @@ class Book(models.Model):
     picture = models.FileField(upload_to='bookEx/static/uploads')
     pic_path = models.CharField(max_length=300, editable=False, blank=True)
     username = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
+    book_rating = models.ForeignKey(BookRating, blank=True, null=True, on_delete=models.CASCADE)
     total_rating = models.DecimalField(decimal_places=1, max_digits=65, default=5)
     times_rated = models.IntegerField(default=1)
     avg_rating = models.DecimalField(decimal_places=1, max_digits=2,
                                      validators=[MinValueValidator(1.0), MaxValueValidator(5.0)], default=5)
+    # rating = models.ManyToManyField(Readers)
 
     def __str__(self):
         return str(self.id)
 
 
-class BookRating(models.Model):
-    rating = models.DecimalField(decimal_places=1, max_digits=2,
-                                 validators=[MinValueValidator(1.0), MaxValueValidator(5.0)], default=5)
+# class Readers(User):
+    # book_id = models.ForeignKey(Book, blank=True, null=True, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.rating
+# class Readers(User):
+#     book_rating = models.ManyToManyField(Book)
 
