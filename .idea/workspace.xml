@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e8a95e6-16c3-4816-bb60-70f621498e84" name="Changes" comment="added photos">
+    <list default="true" id="2e8a95e6-16c3-4816-bb60-70f621498e84" name="Changes" comment="added new models that can now be seen when you sign in with admin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/book_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/book_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookMng/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookMng/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookMng/migrations/0003_remove_book_rating.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookMng/migrations/0003_remove_book_rating.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookMng/migrations/0004_auto_20211107_1538.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookMng/migrations/0004_auto_20211107_1538.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookMng/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookMng/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookMng/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookMng/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +48,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../csula/Fall2021/Software Engineering/backup/bookEx/bookMng/models.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bookEx" />
     <property name="settings.editor.selected.configurable" value="http.proxy" />
   </component>
   <component name="RunManager">
@@ -66,9 +59,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\nishi\anaconda3\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bookEx" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -90,7 +83,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1636247764922</updated>
-      <workItem from="1636300554041" duration="14659000" />
+      <workItem from="1636300554041" duration="15792000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed table bug/ added new books to the account aaaccc">
       <created>1636250767243</created>
@@ -113,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636305528528</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added new models that can now be seen when you sign in with admin">
+      <created>1636425757241</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1636425757241</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,22 +135,26 @@
     <MESSAGE value="Fixed table bug/ added new books to the account aaaccc" />
     <MESSAGE value="added search functionality , with search by user etc" />
     <MESSAGE value="added photos" />
-    <option name="LAST_COMMIT_MESSAGE" value="added photos" />
+    <MESSAGE value="added new models that can now be seen when you sign in with admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="added new models that can now be seen when you sign in with admin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/bookEx/bookMng/views.py</url>
-          <line>151</line>
+          <line>148</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/bookEx/bookMng/views.py</url>
-          <line>89</line>
+          <line>88</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/pythonspace$bookEx.coverage" NAME="bookEx Coverage Results" MODIFIED="1636426635600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bookEx" />
   </component>
 </project>
