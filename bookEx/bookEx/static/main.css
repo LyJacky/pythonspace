@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-#footer {
+.footer {
     text-align: center;
     font-size: 0.8em;
     margin-top: 5px;
@@ -10,6 +10,7 @@
     border-top: thin solid #BBBBBB;
     clear: both;
     color: #969696;
+    align-items: center;
 }
 #leftsidebar {
     width: 180px;

@@ -7,53 +7,65 @@
 <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    <title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>
         {% block title %}
             Title Document
         {% endblock title %}
     </title>
-    <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
 </head>
-<body>
-<div>
-    <header>
-        <div id="logo">
-            <img src="{% static 'logo.jfif' %}" width="40" height ="40" alts="" />
-            <span style="float: right;">
-                {% if user.is_authenticated %}
-                    {{ user.username }}
-                    <a href="{% url 'logout' %}?next=/">Logout</a>
+<body class="container-fluid">
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <a class="navbar-brand" href="/">
+            <img src="{% static 'logo.jfif' %}" width="40" height ="40" alt=""/>
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="\displaybooks">Display Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="\postbook">Post Book</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="\mybooks">My Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="\search">Search Book</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="\messagebox">Message Box</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="\aboutus">About Us</a>
+                    </li>
+                </ul>
+        </div>
+        <div class="container-sm-2" align="right">
+            {% if user.is_authenticated %}
+            {{ user.username }}
+                    <a class="btn btn-primary" href="{% url 'logout' %}?next=/" role="button">Logout</a>
                 {% else %}
                     Not Logged in
-                    <a href="{% url 'login' %}?next=/">Login</a>
-                {% endif %}
-            </span>
+                    <a class="btn btn-primary" href="{% url 'login' %}?next=/" role="button">Login</a>
+            {% endif %}
         </div>
-
-        <div id="topbanner">
-            <img src="{% static 'topbanner.jpg' %}" width="800" height ="200" alts="" />
+    </nav>
+    <div class="col-md-12 col-lg-12" >
+        <div class="px-0" align="center">
+            <img src="{% static 'topbanner.jpg' %}" width="1340" height="200" alt=""/>
         </div>
-    </header>
-    <aside id="leftsidebar">
-        <nav id="nav">
-            <ul>
-                {% block sidenav %}
-                <li>Menu 1</li>
-                <li>Menu 2</li>
-                <li>Menu 3</li>
-                {% endblock sidenav %}
-            </ul>
-        </nav>
-    </aside>
-    <section id="main">
+    </div>
+    <br>
+    <div class="container" align="center">
         {% block content %}
-        Hello World
+        Hello World!
         {% endblock content %}
-    </section>
-    <footer  id="footer"> 2021 Fall CS3337 Django Web Design Project Team 4</footer>
-</div>
-
+    </div>
+    <div id="footer" class="col-12 mt-3">
+        2021 Fall CS3337 Django Web Design Project Team 4
+    </div>
 </body>
 </html>

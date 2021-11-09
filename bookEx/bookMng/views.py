@@ -26,7 +26,7 @@ class Register(CreateView):
         return HttpResponseRedirect(self.success_url)
 
 
-@login_required(login_url=reverse_lazy('login'))
+
 def index(request):
     # return HttpResponse('Hello')
     # return render(request,'base.html')

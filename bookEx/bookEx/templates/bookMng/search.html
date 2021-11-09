@@ -3,11 +3,14 @@
 
 {% block content %}
     <h1 align="center"> Search For A Book In Our System</h1>
-    <div align="center">
-        <form action="{% url 'search' %}" method="GET" value="{{request.GET.b}}">
-            <input type="text" name="b" value="{{request.GET.b}}" placeholder="Search Books by Title Or Username"/>
-            <input type="submit" name="submit" value="Search"/>
+    <form action="{% url 'search' %}" method="GET" value="{{request.GET.b}}">
+        <div class="mb-3">
+            <input type="text" class="form-control" name="b" value="{{request.GET.b}}" placeholder="Search Books by Title Or Username"/>
+        </div>
+            <button type="submit" name="submit" class="btn btn-primary btn-lg" value="Search"> Search </button>
+
         </form>
+
 
         {% if submitbutton == 'Search' and request.GET.b != ''%}
             {% if results %}
