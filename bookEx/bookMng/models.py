@@ -49,6 +49,7 @@ class BookRating(models.Model):
 
 class Messages(models.Model):
     message = models.CharField(max_length=200)
+    username = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
     def __str__(self):
-        return str(self.id)
+        return str(self.id) + str(self.username)
 

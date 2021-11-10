@@ -206,7 +206,7 @@ def book_message(request):
         if form.is_valid():
             message = form.save(commit=False)
             try:
-                message.message = request.message
+                message.username = request.user
             except Exception:
                 pass
             message.save()
