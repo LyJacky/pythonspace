@@ -84,21 +84,8 @@ def book_detail(request, book_id):
     form = BookRatingForm(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
-            bookrating = form.save(commit=False)
-
-            # # print(book.map['test'])
-            # if book.map.get(request.user) is None:
-            #     book.map[request.user] = bookrating.rating
-            # total_rating = 0
-            # for books in book.map:
-            #    print(books)
-            #    total_rating += book.map[books]
-            # print(total_rating)
-            # print(321312312312)
-            book.total_rating = bookrating.rating + book.total_rating
-            book.times_rated = book.times_rated + 1
-            # book.avg_rating = total_rating/len(book.map)
-            book.avg_rating = book.total_rating/book.times_rated
+            book_rating = form.save(commit=False)
+            book.total_rating = book_rating.rating
             book.save()
 
             return HttpResponseRedirect('/displaybooks')

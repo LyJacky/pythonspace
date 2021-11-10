@@ -33,9 +33,6 @@ class Book(models.Model):
     pic_path = models.CharField(max_length=300, editable=False, blank=True)
     username = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
     total_rating = models.DecimalField(decimal_places=1, max_digits=65, default=5)
-    times_rated = models.IntegerField(default=1)
-    avg_rating = models.DecimalField(decimal_places=1, max_digits=2,
-                                     validators=[MinValueValidator(1.0), MaxValueValidator(5.0)], default=5)
     # rating = models.ManyToManyField(Readers)
 
     def __str__(self):
