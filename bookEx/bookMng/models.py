@@ -32,7 +32,7 @@ class Book(models.Model):
     picture = models.FileField(upload_to='bookEx/static/uploads')
     pic_path = models.CharField(max_length=300, editable=False, blank=True)
     username = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
-    total_rating = models.DecimalField(decimal_places=1, max_digits=65, default=5)
+    avg_rating = models.DecimalField(decimal_places=1, max_digits=65, default=5)
     # rating = models.ManyToManyField(Readers)
 
     def __str__(self):
@@ -45,6 +45,6 @@ class BookRating(models.Model):
     username = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
     book = models.ForeignKey(Book, blank=True, null=True, on_delete=models.CASCADE)
     def __str__(self):
-        return str(self.rating) + str(self.username)
+        return 'Rating'+str(self.rating) +' ,Username:'+ str(self.username) + ', Book:'+ str(self.book)
 
 
