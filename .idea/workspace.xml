@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e8a95e6-16c3-4816-bb60-70f621498e84" name="Changes" comment="Push test">
+    <list default="true" id="7fc3aca2-55e2-4aa7-9b7b-d44f5d78dc62" name="Changes" comment="pushing new version of Search, should have no bugs">
+      <change afterPath="$PROJECT_DIR$/bookEx/bookEx/static/uploads/Photos_Library.photoslibrary_YNG6abm.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookEx/bookMng/migrations/0006_auto_20211109_2356.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookEx/bookMng/migrations/0007_auto_20211110_0004.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookEx/bookMng/migrations/0008_auto_20211110_0012.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bookEx/bookMng/migrations/0009_merge_0005_auto_20211108_1904_0008_auto_20211110_0012.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookEx/bookMng/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookMng/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookEx/bookMng/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookMng/views.py" afterDir="false" />
@@ -148,7 +153,8 @@
     <MESSAGE value="added photos" />
     <MESSAGE value="added new models that can now be seen when you sign in with admin" />
     <MESSAGE value="Push test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Push test" />
+    <MESSAGE value="pushing new version of Search, should have no bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="pushing new version of Search, should have no bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
