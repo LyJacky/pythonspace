@@ -11,7 +11,7 @@
 
 {% block content %}
 <h1 align="center"> Message Box </h1>
-  <table align="center" border="2" width="500">
+  <table class="table table-bordered">
       {% for message in messages %}
         <tr>
             <td>{{ message.message }} </td>

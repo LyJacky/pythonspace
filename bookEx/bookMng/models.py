@@ -14,16 +14,6 @@ class MainMenu(models.Model):
         return self.item
 
 
-class BookRating(models.Model):
-    rating = models.DecimalField(decimal_places=1, max_digits=2,
-                                 validators=[MinValueValidator(1.0), MaxValueValidator(5.0)], default=5)
-
-    username = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return str(self.rating) + str(self.id)
-
-
 class Book(models.Model):
     name = models.CharField(max_length=200)
     web = models.URLField(max_length=200)
