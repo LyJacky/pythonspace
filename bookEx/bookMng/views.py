@@ -104,7 +104,7 @@ def book_detail(request, book_id):
                 book.total_rating = book_rating.rating
                 book_rating.save()
 
-            all_ratings = BookRating.objects.all()
+            all_ratings = BookRating.objects.filter(book=book)
             total_rating = 0
             total_number_of_ratings = 0
             for rating in all_ratings:
