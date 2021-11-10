@@ -152,8 +152,11 @@ def search(request):
             book_by_user = None
             for user in users:
                 book_by_user = Q(username=user) or book_by_user
-            lookups = Q(id__icontains=query) | Q(name__icontains=query)
-            results = Book.objects.filter(lookups).distinct() or Book.objects.filter(book_by_user).distinct()
+            lookups =  Q(name__icontains=query)
+            if book_by_user is None:
+                results = Book.objects.filter(lookups).distinct()
+            else:
+                results = Book.objects.filter(lookups).distinct() or Book.objects.filter(book_by_user).distinct()
             for b in results:
                 b.picture_path = b.picture.url[14:]
 
