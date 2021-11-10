@@ -152,7 +152,8 @@ def search(request):
             book_by_user = None
             for user in users:
                 book_by_user = Q(username=user) or book_by_user
-            lookups =  Q(name__icontains=query)
+                # or Book.objects.filter(book_by_user).distinct() Q(id__icontains=query) |
+            lookups = Q(id__icontains=query) | Q(name__icontains=query)
             if book_by_user is None:
                 results = Book.objects.filter(lookups).distinct()
             else:
