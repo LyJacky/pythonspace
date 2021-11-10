@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block sidenav %}
+    {% for item in item_list %}
+       <li>
+           <a href="{{ item.link }}"> {{ item.item }} </a>
+       </li>
+    {% endfor %}
+{% endblock sidenav%}
+
+{% block content %}
+<h1 align="center"> Message Box </h1>
+  <table align="center" border="2" width="500">
+      {% for message in messages %}
+        <tr>
+            <td>{{ message.message }} </td>
+        </tr>
+            {% endfor %}
+        <tr>
+            <td align="center">
+                <a href="book_message">Add Message</a>
+            </td>
+        </tr>
+  </table>
+{% endblock content %}

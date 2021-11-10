@@ -47,4 +47,8 @@ class BookRating(models.Model):
     def __str__(self):
         return 'Rating'+str(self.rating) +' ,Username:'+ str(self.username) + ', Book:'+ str(self.book)
 
+class Messages(models.Model):
+    message = models.CharField(max_length=200)
+    def __str__(self):
+        return str(self.id)
 

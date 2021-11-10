@@ -6,8 +6,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from .models import MainMenu
-from .forms import BookForm, BookRatingForm
-from .models import Book, BookRating
+from .forms import BookForm, BookRatingForm, BookMessageForm
+from .models import Book, BookRating, Messages
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import CreateView
@@ -186,4 +186,39 @@ def search(request):
     else:
         return render(request, 'bookMng/search.html', {
                       'item_list': MainMenu.objects.all()
+                  })
+
+def messagebox(request):
+    messages = Messages.objects.all()
+    books = Book.objects.all()
+    return render(request,
+                    'bookMng/messagebox.html',
+                    {
+                        'item_list': MainMenu.objects.all(),
+                        'messages': messages,
+                        'books': books,
+
+                    })
+
+def book_message(request):
+    if request.method == 'POST':
+        form = BookMessageForm(request.POST, request.FILES)
+        if form.is_valid():
+            message = form.save(commit=False)
+            try:
+                message.message = request.message
+            except Exception:
+                pass
+            message.save()
+            return HttpResponseRedirect('/messagebox')
+    else:
+            form = BookMessageForm()
+            if 'submitted' in request.GET:
+                submitted = True
+    return render(request,
+                  'bookMng/book_message.html',
+                  {
+                    'form': form,
+                    'item_list': MainMenu.objects.all(),
+                    #'submitted': submitted,
                   })

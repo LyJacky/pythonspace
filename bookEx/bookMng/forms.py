@@ -2,6 +2,7 @@ from django import forms
 from django.forms import ModelForm
 from .models import Book
 from .models import BookRating
+from .models import Messages
 
 
 class BookForm(ModelForm):
@@ -21,4 +22,12 @@ class BookRatingForm(ModelForm):
         fields = [
             'rating',
         ]
+
+class BookMessageForm(ModelForm):
+    class Meta:
+        model = Messages
+        fields = [
+            'message',
+        ]
+
 
