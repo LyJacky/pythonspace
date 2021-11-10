@@ -15,12 +15,19 @@
         {% if submitbutton == 'Search' and request.GET.b != ''%}
             {% if results %}
                 <h1>Results for <b>{{ request.GET.b }}</b></h1>
-                <br><br>
-                <table align="center" border="2" width="300" >
+                <br>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Book Name</th>
+                            <th scope="col">Book Image</th>
+                            <th scope="col">Author</th>
+                        </tr>
+                    </thead>
                 {% for result in results %}
                     <tr>
                     <td>
-                        <a href ="book_detail/{{ result.id }}"> {{ result.name }} </a>
+                        <a href ="book_detail/{{ result.id }}" class="text-warning"> {{ result.name }} </a>
                     </td>
                     <td>
                         <img src="{% static result.picture_path %}" width="60" height="60">

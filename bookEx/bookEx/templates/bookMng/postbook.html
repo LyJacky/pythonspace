@@ -2,20 +2,21 @@
 {% load static %}
 
 {% block content %}
-<h1> This is Post Book Page</h1>
-{% if submitted %}
 <h1> Post Book </h1>
+{% if submitted %}
+<h1> Book Posted Successfully! </h1>
 {% else %}
     <form action="" enctype="multipart/form-data" method="post" novalidate>
-        <table>
-            {{form.as_table}}
-            <tr>
-                <td colspan="2">
-                    <input type="submit" value="Submit">
-                </td>
-
-            </tr>
-        </table>
+        <div align="center">
+            <table class="table">
+                {{form.as_table}}
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" name="submit" class="btn btn-primary btn-lg" value="Submit"> Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
         {% csrf_token %}
     </form>
 {% endif %}
