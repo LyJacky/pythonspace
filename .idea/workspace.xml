@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b20ee38b-6609-4da1-8bdc-537c29d4b64c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/messagebox.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/messagebox.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,8 +119,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.bookEx" />
       <item itemvalue="Python.bookEx1" />
+      <item itemvalue="Python.bookEx" />
       <item itemvalue="Python.manage" />
     </list>
   </component>
@@ -163,5 +162,10 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/pythonspace$manage.coverage" NAME="manage Coverage Results" MODIFIED="1636585525015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bookEx" />
+    <SUITE FILE_PATH="coverage/pythonspace$bookEx1.coverage" NAME="bookEx1 Coverage Results" MODIFIED="1636585814637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/pythonspace$bookEx.coverage" NAME="bookEx Coverage Results" MODIFIED="1636587803073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bookEx" />
   </component>
 </project>
