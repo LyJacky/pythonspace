@@ -1,13 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block sidenav %}
-    {% for item in item_list %}
-       <li>
-           <a href="{{ item.link }}"> {{ item.item }} </a>
-       </li>
-    {% endfor %}
-{% endblock sidenav%}
 
 {% block content %}
 {% if submitted %}
@@ -17,8 +10,6 @@
             <input style="text" type="hidden" value="{{user.username}}">
             {{form.as_table}}
             <input type="submit" value="Submit">
-
-
         {% csrf_token %}
     </form>
 {% endif %}

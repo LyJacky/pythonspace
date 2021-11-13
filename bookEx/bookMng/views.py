@@ -83,14 +83,11 @@ def book_detail(request, book_id):
     book.pic_path = book.picture.url[14:]
     form = BookRatingForm(request.POST, request.FILES)
     # book = Book.objects.get(id=book_id)
+    lookups = Q(book=book) & Q(username=request.user)
+    result = BookRating.objects.get(lookups)
     if request.method == 'POST':
         if form.is_valid():
-            lookups = Q(book=book) & Q(username=request.user)
-            results = BookRating.objects.filter(lookups).distinct()
-            book_rating = None
-            for result in results:
-                book_rating = result
-                break
+            book_rating = result
             if book_rating is not None:
                 rating = form.save(commit=False)
                 book_rating.username = request.user
@@ -113,6 +110,14 @@ def book_detail(request, book_id):
             book.avg_rating = total_rating/total_number_of_ratings
             book.save()
             return HttpResponseRedirect('/displaybooks')
+    all_ratings = BookRating.objects.filter(book=book)
+    total_rating = 0
+    total_number_of_ratings = 0
+    for rating in all_ratings:
+        total_number_of_ratings += 1
+        total_rating += rating.rating
+    book.avg_rating = total_rating / total_number_of_ratings
+    book.save()
     return render(request,
                   'bookMng/book_detail.html',
                   {
