@@ -16,6 +16,7 @@ from django.urls import reverse_lazy
 
 from django.contrib.auth.decorators import login_required
 
+
 class Register(CreateView):
     template_name = 'registration/register.html'
     form_class = UserCreationForm
@@ -26,7 +27,6 @@ class Register(CreateView):
         return HttpResponseRedirect(self.success_url)
 
 
-
 def index(request):
     # return HttpResponse('Hello')
     # return render(request,'base.html')
@@ -34,9 +34,11 @@ def index(request):
     return render(request,
                   'bookMng/index.html',
                   {
-                    'item_list': MainMenu.objects.all()
+                      'item_list': MainMenu.objects.all()
 
                   })
+
+
 @login_required(login_url=reverse_lazy('login'))
 def postbook(request):
     submitted = False
@@ -52,17 +54,18 @@ def postbook(request):
             book.save()
             return HttpResponseRedirect('/postbook?submitted=True')
     else:
-            form = BookForm()
-            if 'submitted' in request.GET:
-                submitted = True
+        form = BookForm()
+        if 'submitted' in request.GET:
+            submitted = True
     return render(request,
                   'bookMng/postbook.html',
                   {
-                    'form': form,
-                    'item_list': MainMenu.objects.all(),
-                    'submitted': submitted
+                      'form': form,
+                      'item_list': MainMenu.objects.all(),
+                      'submitted': submitted
 
                   })
+
 
 @login_required(login_url=reverse_lazy('login'))
 def displaybooks(request):
@@ -77,12 +80,12 @@ def displaybooks(request):
                       'books': books,
                   })
 
+
 @login_required(login_url=reverse_lazy('login'))
 def book_detail(request, book_id):
     book = Book.objects.get(id=book_id)
     book.pic_path = book.picture.url[14:]
     form = BookRatingForm(request.POST, request.FILES)
-    # book = Book.objects.get(id=book_id)
     lookups = Q(book=book) & Q(username=request.user)
     result = BookRating.objects.get(lookups)
     if request.method == 'POST':
@@ -107,7 +110,7 @@ def book_detail(request, book_id):
             for rating in all_ratings:
                 total_number_of_ratings += 1
                 total_rating += rating.rating
-            book.avg_rating = total_rating/total_number_of_ratings
+            book.avg_rating = total_rating / total_number_of_ratings
             book.save()
             return HttpResponseRedirect('/displaybooks')
     all_ratings = BookRating.objects.filter(book=book)
@@ -126,6 +129,7 @@ def book_detail(request, book_id):
                       'form': form,
                   })
 
+
 @login_required(login_url=reverse_lazy('login'))
 def book_delete(request, book_id):
     book = Book.objects.get(id=book_id)
@@ -135,6 +139,7 @@ def book_delete(request, book_id):
                   {
                       'item_list': MainMenu.objects.all(),
                   })
+
 
 @login_required(login_url=reverse_lazy('login'))
 def mybooks(request):
@@ -148,12 +153,14 @@ def mybooks(request):
                       'books': books,
                   })
 
+
 def aboutus(request):
     return render(request,
                   'bookMng/aboutus.html',
                   {
                       'item_list': MainMenu.objects.all()
                   })
+
 
 @login_required(login_url=reverse_lazy('login'))
 def search(request):
@@ -178,32 +185,34 @@ def search(request):
                 b.picture_path = b.picture.url[14:]
 
             return render(request, 'bookMng/search.html', {
-                      'item_list': MainMenu.objects.all(),
-                      'results': results,
-                      'submitbutton': submitbutton,
-                  })
+                'item_list': MainMenu.objects.all(),
+                'results': results,
+                'submitbutton': submitbutton,
+            })
 
         else:
             return render(request, 'bookMng/search.html', {
-                      'item_list': MainMenu.objects.all()
-                  })
+                'item_list': MainMenu.objects.all()
+            })
 
     else:
         return render(request, 'bookMng/search.html', {
-                      'item_list': MainMenu.objects.all()
-                  })
+            'item_list': MainMenu.objects.all()
+        })
+
 
 def messagebox(request):
     messages = Messages.objects.all()
     books = Book.objects.all()
     return render(request,
-                    'bookMng/messagebox.html',
-                    {
-                        'item_list': MainMenu.objects.all(),
-                        'messages': messages,
-                        'books': books,
+                  'bookMng/messagebox.html',
+                  {
+                      'item_list': MainMenu.objects.all(),
+                      'messages': messages,
+                      'books': books,
 
-                    })
+                  })
+
 
 def book_message(request):
     if request.method == 'POST':
@@ -217,13 +226,13 @@ def book_message(request):
             message.save()
             return HttpResponseRedirect('/messagebox')
     else:
-            form = BookMessageForm()
-            if 'submitted' in request.GET:
-                submitted = True
+        form = BookMessageForm()
+        if 'submitted' in request.GET:
+            submitted = True
     return render(request,
                   'bookMng/book_message.html',
                   {
-                    'form': form,
-                    'item_list': MainMenu.objects.all(),
-                    #'submitted': submitted,
+                      'form': form,
+                      'item_list': MainMenu.objects.all(),
+                      # 'submitted': submitted,
                   })
