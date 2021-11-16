@@ -14,6 +14,7 @@
         <th scope="col">Price</th>
         <th scope="col">Publication Date</th>
         <th scope="col">Average Book Rating</th>
+        <th scope="col">My Rating</th>
         <th scope="col">Rate Book</th>
     </tr>
     </thead>
@@ -27,6 +28,7 @@
         <td>{{ book.price }}</td>
         <td>{{ book.publishdate }}</td>
         <td>{{ book.avg_rating }}</td>
+        <td>{{ book_rating }}</td>
         <td>
             <form action="" enctype="multipart/form-data" method="post" novalidate>
                 <table>

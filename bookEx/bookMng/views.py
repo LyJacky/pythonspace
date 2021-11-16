@@ -127,6 +127,7 @@ def book_detail(request, book_id):
                       'item_list': MainMenu.objects.all(),
                       'book': book,
                       'form': form,
+                      'book_rating': result.rating,
                   })
 
 
