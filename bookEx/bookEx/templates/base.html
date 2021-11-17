@@ -16,7 +16,7 @@
         {% endblock title %}
     </title>
 </head>
-<body class="container-fluid ">
+<body style="background-image: url('{% static 'bg.jpg' %}');">
     <nav class="navbar navbar-expand-sm navbar-light sticky-top" style="background-color: white;">
         <a class="navbar-brand " href="/">
             <img src="{% static 'logo.jfif' %}" width="40" height ="40" alt=""/>
@@ -43,7 +43,7 @@
                     </li>
                 </ul>
         </div>
-        <div class="container-sm-2" align="right">
+        <div class="col-sm-2" align="justify">
             {% if user.is_authenticated %}
             {{ user.username }}
                     <a class="btn btn-primary" href="{% url 'logout' %}?next=/" role="button">Logout</a>
@@ -55,11 +55,11 @@
     </nav>
     <div class="col-md-12 col-lg-12" >
         <div class="px-0" align="center">
-            <img src="{% static 'topbanner.jpg' %}" width="1340" height="200" alt=""/>
+            <img src="{% static 'topbanner.jpg' %}" width="1400" height="200" alt=""/>
         </div>
     </div>
     <br>
-    <div class="container" align="center">
+    <div class="container bg-light" align="center">
         {% block content %}
         Hello World!
         {% endblock content %}

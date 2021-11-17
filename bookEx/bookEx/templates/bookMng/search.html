@@ -8,8 +8,8 @@
             <input type="text" class="form-control" name="b" value="{{request.GET.b}}" placeholder="Search Books by Title Or Username"/>
         </div>
             <button type="submit" name="submit" class="btn btn-primary btn-lg" value="Search"> Search </button>
-
         </form>
+<br>
 
 
         {% if submitbutton == 'Search' and request.GET.b != ''%}
@@ -38,6 +38,7 @@
                     </tr>
                 {% endfor %}
                 </table>
+                <br>
                    {% else %}
                     <h1>Book does not exist in system!</h1>
             {% endif %}
