@@ -129,13 +129,27 @@ def book_detail(request, book_id):
     if total_number_of_ratings != 0:
         book.avg_rating = total_rating / total_number_of_ratings
     else:
-        book.avg_rating = 0
-        result = BookRating()
-        result.username = request.user
-        result.rating = None
-        result.book = book
+        book.avg_rating = None
+        # result = BookRating()
+        # result.username = request.user
+        # result.book = book
         # result.save()
-    book.save()
+        return render(request,
+                      'bookMng/book_detail.html',
+                      {
+                          'item_list': MainMenu.objects.all(),
+                          'book': book,
+                          'form': form,
+                      })
+    if result is None:
+        return render(request,
+                      'bookMng/book_detail.html',
+                      {
+                          'item_list': MainMenu.objects.all(),
+                          'book': book,
+                          'form': form,
+                      })
+    # book.save()
     return render(request,
                   'bookMng/book_detail.html',
                   {
