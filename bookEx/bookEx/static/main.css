@@ -28,12 +28,8 @@
     left: 0px;
     list-style-position: inside;
     margin-left: -10px;
-    /*position: sticky; top: 100px;*/
-    /*position: sticky; top: 50px;*/
 }
-body nav {
-    position: sticky;
-}
+
 #main {
     width: 560px;
     float: left;
