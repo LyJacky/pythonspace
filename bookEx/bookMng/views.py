@@ -6,8 +6,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from .models import MainMenu
-from .forms import BookForm, BookRatingForm, BookMessageForm
-from .models import Book, BookRating, Messages
+from .forms import BookForm, BookRatingForm, BookMessageForm, IndivMessageForm
+from .models import Book, BookRating, Messages, IndivMessages
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import CreateView
@@ -233,6 +233,7 @@ def search(request):
 
 def messagebox(request):
     messages = Messages.objects.all()
+    imessages = IndivMessages.objects.filter(receiver=request.user)
     books = Book.objects.all()
     return render(request,
                   'bookMng/messagebox.html',
@@ -240,6 +241,7 @@ def messagebox(request):
                       'item_list': MainMenu.objects.all(),
                       'messages': messages,
                       'books': books,
+                      'imessages': imessages,
 
                   })
 
@@ -257,6 +259,29 @@ def book_message(request):
             return HttpResponseRedirect('/messagebox')
     else:
         form = BookMessageForm()
+        if 'submitted' in request.GET:
+            submitted = True
+    return render(request,
+                  'bookMng/book_message.html',
+                  {
+                      'form': form,
+                      'item_list': MainMenu.objects.all(),
+                      # 'submitted': submitted,
+                  })
+
+def book_imessage(request):
+    if request.method == 'POST':
+        form = IndivMessageForm(request.POST, request.FILES)
+        if form.is_valid():
+            message = form.save(commit=False)
+            try:
+                message.username = request.user
+            except Exception:
+                pass
+            message.save()
+            return HttpResponseRedirect('/messagebox')
+    else:
+        form = IndivMessageForm()
         if 'submitted' in request.GET:
             submitted = True
     return render(request,

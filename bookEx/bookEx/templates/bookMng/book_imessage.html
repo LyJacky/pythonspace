@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+{% if submitted %}
+<h1 align="center"> Message Box </h1>
+{% else %}
+    <form action="" enctype="multipart/form-data" method="post" novalidate>
+            <input style="text" type="hidden" value="{{user.username}}">
+            {{form.as_table}}
+            <input type="submit" value="Submit">
+        {% csrf_token %}
+    </form>
+{% endif %}
+{% endblock content %}

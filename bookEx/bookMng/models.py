@@ -28,18 +28,31 @@ class Book(models.Model):
     def __str__(self):
         return str(self.id)
 
+
 class BookRating(models.Model):
     rating = models.DecimalField(decimal_places=1, max_digits=2,
                                  validators=[MinValueValidator(1.0), MaxValueValidator(5.0)], default=5)
 
     username = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
     book = models.ForeignKey(Book, blank=True, null=True, on_delete=models.CASCADE)
+
     def __str__(self):
         return 'Rating'+str(self.rating) +' ,Username:'+ str(self.username) + ', Book:'+ str(self.book)
+
 
 class Messages(models.Model):
     message = models.CharField(max_length=200)
     username = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
+
     def __str__(self):
         return str(self.id) + str(self.username)
+
+
+class IndivMessages(models.Model):
+    message = models.CharField(max_length=200)
+    username = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
+    receiver = models.CharField(max_length=200)
+
+    def __str__(self):
+        return str(self.id) + ' Username: ' + str(self.username) + ', Recipient: ' + str(self.receiver)
 

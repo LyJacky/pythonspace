@@ -30,4 +30,25 @@
             </td>
         </tr>
   </table>
+
+  Individual Message Box
+  <table class="table table-bordered">
+          <thead>
+        <tr>
+            <th scope="col">Messages</th>
+            <th scope="col">From</th>
+        </tr>
+    </thead>
+      {% for imessage in imessages %}
+        <tr>
+            <td>{{ imessage.message }} </td>
+            <td>{{ imessage.username }} </td>
+        </tr>
+            {% endfor %}
+        <tr>
+            <td align="center">
+                <a href="book_imessage">Send Message</a>
+            </td>
+        </tr>
+  </table>
 {% endblock content %}

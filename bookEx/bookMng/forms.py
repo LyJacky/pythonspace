@@ -3,6 +3,7 @@ from django.forms import ModelForm
 from .models import Book
 from .models import BookRating
 from .models import Messages
+from .models import IndivMessages
 
 
 class BookForm(ModelForm):
@@ -23,6 +24,7 @@ class BookRatingForm(ModelForm):
             'rating',
         ]
 
+
 class BookMessageForm(ModelForm):
     class Meta:
         model = Messages
@@ -30,4 +32,12 @@ class BookMessageForm(ModelForm):
             'message',
         ]
 
+
+class IndivMessageForm(ModelForm):
+    class Meta:
+        model = IndivMessages
+        fields = [
+            'receiver',
+            'message',
+        ]
 
