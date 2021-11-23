@@ -8,22 +8,23 @@
         </li>
 {% endblock sidenav %}
 
-
 {% block content %}
-<h1> Login </h1>
-    <form action="{% url 'login' %}" method="post">
-        <table>
-            {{form.as_table}}
-            <tr>
-                <td colspan="2">
-                    <input type="submit" value="login">
-                </td>
-            </tr>
-        </table>
-        <p align="center">
-            To Register <a href="{%url 'register' %}"> Click Here </a>
-        </p>
-        <input type="hidden" name="next" value="{{ next }}"/>
-        {% csrf_token %}
-    </form>
+<h1 align="center">Login</h1>
+<br>
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control" name="username">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" name="password">
+    </div>
+    <div class="form-text">To Register <a href="{%url 'register' %}"> Click Here </a></div>
+    <br>
+    <button type="submit" class="btn btn-primary" value="login">Login</button>
+    <input type="hidden" name="next" value="{{ next }}"/>
+</form>
+<br>
 {% endblock content %}

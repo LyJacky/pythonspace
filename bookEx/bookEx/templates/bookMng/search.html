@@ -3,6 +3,7 @@
 
 {% block content %}
     <h1 align="center"> Search For A Book In Our System</h1>
+<br>
     <form action="{% url 'search' %}" method="GET" value="{{request.GET.b}}">
         <div class="mb-3">
             <input type="text" class="form-control" name="b" value="{{request.GET.b}}" placeholder="Search Books by Title Or Username"/>
@@ -14,7 +15,7 @@
 
         {% if submitbutton == 'Search' and request.GET.b != ''%}
             {% if results %}
-                <h1>Results for <b>{{ request.GET.b }}</b></h1>
+                <h1 align="center">Results for <b>{{ request.GET.b }}</b></h1>
                 <br>
                 <table class="table table-bordered">
                     <thead>
@@ -40,7 +41,7 @@
                 </table>
                 <br>
                    {% else %}
-                    <h1>Book does not exist in system!</h1>
+                    <h1 align="center">Book does not exist in system!</h1>
             {% endif %}
         {% endif %}
     </div>
