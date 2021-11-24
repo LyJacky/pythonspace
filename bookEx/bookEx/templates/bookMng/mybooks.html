@@ -3,22 +3,23 @@
 
 {% block content %}
 <h1 align="center"> My Books </h1>
-<table class="table table-bordered">
-    <thead>
+<table class="table table-bordered border-primary table-hover">
+    <thead align="center">
         <tr>
             <th scope="col">Book Name</th>
             <th scope="col">Book Image</th>
             <th scope="col">Author</th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
     {% for book in books %}
-        <tr>
+        <tr align="center">
             <td>
-                <a href="book_detail/{{ book.id }}" class="text-warning"> {{ book.name }} </a>
+                <a class= "btn btn-primary" href="book_detail/{{ book.id }}" role="button"> {{ book.name }} </a>
             </td>
             <td>
-                <img src="{% static book.picture_path %}" width="60" height="60">
+                <img src="{% static book.picture_path %}" width="80" height="80">
             </td>
             <td>
                 {{book.username}}
@@ -30,6 +31,7 @@
     </tbody>
     {% endfor %}
 </table>
+<br>
 {% endblock content %}
 
 

@@ -3,10 +3,10 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 {% block content %}
-<h1 align="center"> Book detail </h1>
-<table align="center" border="2" width="500" class="table table-bordered">
+<h1 align="center"> Book Details </h1>
+<table class="table table-bordered border-primary">
     <thead class="thead-light">
-    <tr>
+    <tr align="center">
         <th scope="col">Book Name</th>
         <th scope="col">Book Image</th>
         <th scope="col">Author</th>
@@ -18,10 +18,10 @@
         <th scope="col">Rate Book</th>
     </tr>
     </thead>
-    <tr>
+    <tr align="center">
         <td>{{ book.name }}</td>
         <td>
-            <img src="{% static book.pic_path %}" width="60" height="60">
+            <img src="{% static book.pic_path %}" width="80" height="80">
         </td>
         <td>{{ book.username }}</td>
         <td>{{ book.web }}</td>
@@ -42,6 +42,7 @@
         </td>
     </tr>
 </table>
+<br>
 {% endblock content %}
 
 

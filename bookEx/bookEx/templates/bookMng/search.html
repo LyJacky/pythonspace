@@ -8,7 +8,9 @@
         <div class="mb-3">
             <input type="text" class="form-control" name="b" value="{{request.GET.b}}" placeholder="Search Books by Title Or Username"/>
         </div>
+        <div align="center">
             <button type="submit" name="submit" class="btn btn-primary btn-lg" value="Search"> Search </button>
+        </div>
         </form>
 <br>
 
@@ -17,21 +19,21 @@
             {% if results %}
                 <h1 align="center">Results for <b>{{ request.GET.b }}</b></h1>
                 <br>
-                <table class="table table-bordered">
+                <table class="table table-bordered border-primary table-hover">
                     <thead>
-                        <tr>
+                        <tr align="center">
                             <th scope="col">Book Name</th>
                             <th scope="col">Book Image</th>
                             <th scope="col">Author</th>
                         </tr>
                     </thead>
                 {% for result in results %}
-                    <tr>
+                    <tr align="center">
                     <td>
-                        <a href ="book_detail/{{ result.id }}" class="text-warning"> {{ result.name }} </a>
+                        <a class= "btn btn-primary" href="book_detail/{{ result.id }}" role="button"> {{ result.name }} </a>
                     </td>
                     <td>
-                        <img src="{% static result.picture_path %}" width="60" height="60">
+                        <img src="{% static result.picture_path %}" width="80" height="80">
                     </td>
                     <td>
                         {{ result.username }}
@@ -42,6 +44,7 @@
                 <br>
                    {% else %}
                     <h1 align="center">Book does not exist in system!</h1>
+                    <br>
             {% endif %}
         {% endif %}
     </div>

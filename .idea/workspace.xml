@@ -5,17 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b20ee38b-6609-4da1-8bdc-537c29d4b64c" name="Changes" comment="added improvement to avg, removed unnecessary html on book_message.html .">
+      <change afterPath="$PROJECT_DIR$/bookEx/bookEx/static/logo.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/aboutus.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/aboutus.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/book_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/book_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/book_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/book_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/displaybooks.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/displaybooks.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/messagebox.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/messagebox.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/mybooks.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/mybooks.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/postbook.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/postbook.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/registration/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/registration/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/registration/register_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/registration/register_success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookMng/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookMng/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookMng/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookMng/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookEx/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +63,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bookEx/bookEx/static" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nshan\OneDrive\Desktop\pythonspace\bookEx\bookEx\static" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.bookEx">
     <configuration name="bookEx" type="PythonConfigurationType" factoryName="Python">

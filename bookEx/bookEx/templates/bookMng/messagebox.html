@@ -11,27 +11,18 @@
 
 {% block content %}
 <h1 align="center"> Message Box </h1>
-  <table class="table table-bordered">
-          <thead>
-        <tr>
-            <th scope="col">Messages</th>
-            <th scope="col">Users</th>
-        </tr>
-    </thead>
       {% for message in messages %}
-        <tr>
-            <td>{{ message.message }} </td>
-            <td>{{ message.username }} </td>
-        </tr>
-            {% endfor %}
-        <tr>
-            <td align="center">
-                <a href="book_message">Add Message</a>
-            </td>
-        </tr>
-  </table>
-
-  Individual Message Box
+<div class="card text-center mb-3 border-primary">
+    <div class="card-header">
+        <b>Posted by {{ message.username }}</b>
+    </div>
+    <div class="card-body">
+        <p class="card-text"> {{ message.message }}</p>
+    </div>
+</div>
+      {% endfor %}
+<a href="book_message">Add Message</a>
+<h1 align="center"> Individual Message Box </h1>
   <table class="table table-bordered">
           <thead>
         <tr>
@@ -51,4 +42,5 @@
             </td>
         </tr>
   </table>
+<br>
 {% endblock content %}
