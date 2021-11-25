@@ -47,6 +47,9 @@ class BookMessageForm(ModelForm):
         fields = [
             'message',
         ]
+        widgets = {
+            'message': forms.Textarea(attrs={'class': 'form-control'})
+        }
 
 
 class IndivMessageForm(ModelForm):
@@ -56,4 +59,8 @@ class IndivMessageForm(ModelForm):
             'receiver',
             'message',
         ]
+        widgets = {
+            'receiver': forms.TextInput(attrs={'class': 'form-control'}),
+            'message': forms.Textarea(attrs={'class': 'form-control'})
+        }
 

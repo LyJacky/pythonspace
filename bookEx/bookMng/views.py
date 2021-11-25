@@ -285,7 +285,7 @@ def book_imessage(request):
         if 'submitted' in request.GET:
             submitted = True
     return render(request,
-                  'bookMng/book_message.html',
+                  'bookMng/book_imessage.html',
                   {
                       'form': form,
                       'item_list': MainMenu.objects.all(),

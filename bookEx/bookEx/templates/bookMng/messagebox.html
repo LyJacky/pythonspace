@@ -21,26 +21,23 @@
     </div>
 </div>
       {% endfor %}
-<a href="book_message">Add Message</a>
-<h1 align="center"> Individual Message Box </h1>
-  <table class="table table-bordered">
+<a class="btn btn-primary" href="book_message" role="button">Add Message</a>
+<h1 align="center"> Private Message Box </h1>
+  <table class="table table-bordered border-primary">
           <thead>
-        <tr>
-            <th scope="col">Messages</th>
+        <tr align="center">
+            <th scope="col">Message</th>
             <th scope="col">From</th>
         </tr>
     </thead>
       {% for imessage in imessages %}
-        <tr>
+        <tr align="center">
             <td>{{ imessage.message }} </td>
             <td>{{ imessage.username }} </td>
         </tr>
-            {% endfor %}
-        <tr>
-            <td align="center">
-                <a href="book_imessage">Send Message</a>
-            </td>
-        </tr>
+      {% endfor %}
   </table>
+<a class="btn btn-primary" href="book_imessage" role="button">Send Message</a>
+<br>
 <br>
 {% endblock content %}

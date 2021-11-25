@@ -6,11 +6,13 @@
 {% if submitted %}
 <h1 align="center"> Message Box </h1>
 {% else %}
+<h1 align="center"> Send Private Message</h1>
     <form action="" enctype="multipart/form-data" method="post" novalidate>
-            <input style="text" type="hidden" value="{{user.username}}">
-            {{form.as_table}}
-            <input type="submit" value="Submit">
+        <input style="text" type="hidden" value="{{user.username}}">
+        {{form.as_p}}
+        <button type="submit" name="submit" class="btn btn-primary" value="Submit"> Send</button>
         {% csrf_token %}
     </form>
+<br>
 {% endif %}
 {% endblock content %}
