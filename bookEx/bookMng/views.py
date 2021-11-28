@@ -187,7 +187,14 @@ def rating_delete(request, book_id):
     for res in results:
         result = res
         break
-    result.delete()
+    if result is not None:
+        result.delete()
+    else:
+        return render(request,
+                      'bookMng/rating_delete_fail.html',
+                      {
+                          'item_list': MainMenu.objects.all(),
+                      })
     return render(request,
                   'bookMng/rating_delete.html',
                   {
