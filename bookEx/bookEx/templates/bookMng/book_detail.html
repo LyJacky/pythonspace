@@ -16,6 +16,8 @@
         <th scope="col">Average Book Rating</th>
         <th scope="col">My Rating</th>
         <th scope="col">Rate Book</th>
+        <th scope="col">Delete Book Rating</th>
+
     </tr>
     </thead>
     <tr align="center">
@@ -39,6 +41,9 @@
                 </table>
                 {% csrf_token %}
             </form>
+        </td>
+        <td align="center">
+            <a class="btn btn-danger" href="rating_delete/{{ book.id }}" role="button">Delete</a>
         </td>
     </tr>
 </table>

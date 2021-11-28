@@ -88,6 +88,13 @@ def book_detail(request, book_id):
     form = BookRatingForm(request.POST, request.FILES)
     lookups = Q(book=book) & Q(username=request.user)
     results = BookRating.objects.filter(lookups).distinct()
+    # # form = CHOICES(request.POST)
+    #
+    # if form.is_valid():
+    #     selected = form.cleaned_data.get("NUMS")
+    #     print(selected)
+    #
+    #
     result = None
     for res in results:
         result = res
@@ -170,6 +177,22 @@ def book_delete(request, book_id):
                       'item_list': MainMenu.objects.all(),
                   })
 
+@login_required(login_url=reverse_lazy('login'))
+def rating_delete(request, book_id):
+    book = Book.objects.get(id=book_id)
+    book.pic_path = book.picture.url[14:]
+    lookups = Q(book=book) & Q(username=request.user)
+    results = BookRating.objects.filter(lookups).distinct()
+    result = None
+    for res in results:
+        result = res
+        break
+    result.delete()
+    return render(request,
+                  'bookMng/rating_delete.html',
+                  {
+                      'item_list': MainMenu.objects.all(),
+                  })
 
 @login_required(login_url=reverse_lazy('login'))
 def mybooks(request):
