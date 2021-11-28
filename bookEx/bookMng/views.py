@@ -293,16 +293,30 @@ def book_message(request):
                   })
 
 def book_imessage(request):
+    user = get_user_model()
+    users = user.objects.all()
+    error = '0'
     if request.method == 'POST':
         form = IndivMessageForm(request.POST, request.FILES)
         if form.is_valid():
             message = form.save(commit=False)
-            try:
-                message.username = request.user
-            except Exception:
-                pass
-            message.save()
-            return HttpResponseRedirect('/messagebox')
+            for u in users:
+                if u.username == message.receiver:
+                    try:
+                        message.username = request.user
+                    except Exception:
+                        pass
+                    message.save()
+                    return HttpResponseRedirect('/messagebox')
+        error = '1'
+        return  render(request,
+                  'bookMng/book_imessage.html',
+                  {
+                      'form': form,
+                      'item_list': MainMenu.objects.all(),
+                      'error': error,
+                      # 'submitted': submitted,
+                  })
     else:
         form = IndivMessageForm()
         if 'submitted' in request.GET:
@@ -312,5 +326,6 @@ def book_imessage(request):
                   {
                       'form': form,
                       'item_list': MainMenu.objects.all(),
+                      'error': error,
                       # 'submitted': submitted,
                   })
