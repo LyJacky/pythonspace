@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block title %}
+About Us
+{% endblock title %}
+
 {% block content %}
 <h1 align="center"> About Us </h1>
 <p align="center"> Hello! Thank you for coming to our website! We hope you find what you are looking for!</p>
@@ -57,13 +61,3 @@
 </table>
 <br>
 {% endblock content %}
-
-
-
-{% block sidenav %}
-    {% for item in item_list %}
-        <li>
-            <a href="{{ item.link }}"> {{ item.item }} </a>
-        </li>
-    {% endfor %}
-{% endblock sidenav %}

@@ -1,44 +1,43 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block title %}
+My Books
+{% endblock title %}
+
 {% block content %}
 <h1 align="center"> My Books </h1>
-<table class="table table-bordered border-primary table-hover">
-    <thead align="center">
-        <tr>
-            <th scope="col">Book Name</th>
-            <th scope="col">Book Image</th>
-            <th scope="col">Author</th>
-            <th scope="col"></th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for book in books %}
-        <tr align="center">
-            <td>
-                <a class= "btn btn-primary" href="book_detail/{{ book.id }}" role="button"> {{ book.name }} </a>
-            </td>
-            <td>
-                <img src="{% static book.picture_path %}" width="80" height="80">
-            </td>
-            <td>
-                {{book.username}}
-            </td>
-            <td align="center">
-                <a class="btn btn-danger" href="book_delete/{{ book.id }}" role="button">Delete</a>
-            </td>
-        </tr>
-    </tbody>
-    {% endfor %}
-</table>
+{% if not books %}
+    <h4 align="center"> You have no books! To post, go to Post Book page.</h4>
+{% else %}
+    <table class="table table-bordered border-primary table-hover">
+        <thead align="center">
+            <tr>
+                <th scope="col">Book Name</th>
+                <th scope="col">Book Image</th>
+                <th scope="col">Author</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+            <tr align="center">
+                <td>
+                    <a class= "btn btn-primary" href="book_detail/{{ book.id }}" role="button"> {{ book.name }} </a>
+                </td>
+                <td>
+                    <img src="{% static book.picture_path %}" width="80" height="80">
+                </td>
+                <td>
+                    {{book.username}}
+                </td>
+                <td align="center">
+                    <a class="btn btn-danger" href="book_delete/{{ book.id }}" role="button">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+{% endif %}
 <br>
 {% endblock content %}
-
-
-{% block sidenav %}
-    {% for item in item_list %}
-        <li>
-            <a href="{{ item.link }}"> {{ item.item }} </a>
-        </li>
-    {% endfor %}
-{% endblock sidenav %}

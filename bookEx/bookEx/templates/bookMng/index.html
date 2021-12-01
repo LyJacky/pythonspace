@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block title %}
+Home
+{% endblock title %}
+
 {% block content %}
 <h1 align="center"> Welcome to The Archive! </h1>
 <p align="center">This system allows users to post and browse books on campus.</p>
@@ -9,13 +13,3 @@
 </div>
 <br>
 {% endblock content %}
-
-
-
-{% block sidenav %}
-    {% for item in item_list %}
-        <li>
-            <a href="{{ item.link }}"> {{ item.item }} </a>
-        </li>
-    {% endfor %}
-{% endblock sidenav %}

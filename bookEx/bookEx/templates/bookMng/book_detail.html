@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block title %}
+Book Details
+{% endblock title %}
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 {% block content %}
 <h1 align="center"> Book Details </h1>
@@ -49,12 +53,3 @@
 </table>
 <br>
 {% endblock content %}
-
-
-{% block sidenav %}
-{% for item in item_list %}
-<li>
-    <a href="{{ item.link }}"> {{ item.item }} </a>
-</li>
-{% endfor %}
-{% endblock sidenav %}
