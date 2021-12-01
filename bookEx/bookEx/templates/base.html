@@ -41,15 +41,22 @@
                     <li class="nav-item">
                         <a class="nav-link" href="\aboutus">About Us</a>
                     </li>
+                    {% if user.is_authenticated %}
+                        <div class="px-2">
+                            <a href="{% url 'shoppingcart' %}">
+                                <img src= "{% static 'cart_logo.png' %}" class="" style="width: 40px">
+                            </a>
+                        </div>
+                    {% endif %}
                 </ul>
         </div>
         <div class="col-sm-2" align="justify">
             {% if user.is_authenticated %}
-            {{ user.username }}
-                    <a class="btn btn-primary" href="{% url 'logout' %}?next=/" role="button">Logout</a>
-                {% else %}
-                    Not Logged in
-                    <a class="btn btn-primary" href="{% url 'login' %}?next=/" role="button">Login</a>
+                {{ user.username }}
+                <a class="btn btn-primary" href="{% url 'logout' %}?next=/" role="button">Logout</a>
+            {% else %}
+                Not Logged in
+                <a class="btn btn-primary" href="{% url 'login' %}?next=/" role="button">Login</a>
             {% endif %}
         </div>
     </nav>

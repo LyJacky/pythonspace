@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Shopping Cart
+{% endblock title %}
+
+{% block content %}
+<h1 align="center">Shopping Cart </h1>
+<p align="center">Here is your Shopping Cart! Clicking on the book will give you more details.</p>
+{% if not books %}
+    <h3 align="center">Shopping Cart is currently empty! Go to Display Books to add to your shopping cart!</h3>
+{% else %}
+    <table class="table table-striped table-bordered mx-auto" align="center" border="2">
+        <thead class="thead-light">
+            <tr align="center">
+                <th class="font-weight-bold">Title</th>
+                <th class="font-weight-bold">Price</th>
+            </tr>
+            {% for book in books %}
+        <tr align="center">
+            <td>
+                <a href="book_detail/{{ book.bookId.id }}">
+                    {{book.name}}
+                </a>
+            </td>
+            <td>
+                {{ book.price }}
+            </td>
+            <td>
+                <a class="btn btn-danger btn-sm" href="book_deleteCart/{{ book.id }}" role="button">Remove</a>
+            </td>
+        </tr>
+    {% endfor %}
+        </thead>
+        <tr align="center">
+            <td colspan="2"><b>Your Total is</b></td>
+            <td> <b>$ {{totalPrice}}</b></td>
+        </tr>
+    </table>
+{% endif %}
+<br>
+{% endblock content %}

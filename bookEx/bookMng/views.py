@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 
@@ -7,7 +7,7 @@ from django.http import HttpResponse
 
 from .models import MainMenu
 from .forms import BookForm, BookRatingForm, BookMessageForm, IndivMessageForm
-from .models import Book, BookRating, Messages, IndivMessages
+from .models import Book, BookRating, Messages, IndivMessages, UserCart
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import CreateView
@@ -15,6 +15,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from .forms import SignUpForm
 from django.contrib.auth.decorators import login_required
+from django.db.models import Sum
 
 
 class Register(CreateView):
@@ -336,3 +337,35 @@ def book_imessage(request):
                       'error': error,
                       # 'submitted': submitted,
                   })
+
+@login_required(login_url=reverse_lazy('login'))
+def shoppingcart(request):
+    books = UserCart.objects.filter(username=request.user)
+    totalPrice = list(books.aggregate(Sum('price')).values())[0]
+    return render(request,
+        'bookMng/shoppingcart.html',
+        {
+            'item_list': MainMenu.objects.all(),
+            'books': books,
+            'totalPrice': totalPrice
+        })
+
+
+@login_required(login_url=reverse_lazy('login'))
+def book_addCart(request, book_id):
+    books = Book.objects.all()
+    book = Book.objects.get(id=book_id)
+    item = UserCart()
+    item.username = request.user
+    item.bookId = book
+    item.price = book.price
+    item.name = book.name
+    item.save()
+    return redirect('displaybooks')
+
+
+@login_required(login_url=reverse_lazy('login'))
+def book_deleteCart(request, cart_id):
+    cartItem = UserCart.objects.get(id=cart_id)
+    cartItem.delete()
+    return redirect('shoppingcart')

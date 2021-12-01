@@ -5,11 +5,12 @@
 {% block content %}
 <h1 align="center"> Display Books Page </h1>
 <table class="table table-bordered table-hover border-primary">
-    <thead >
+    <thead>
         <tr align="center">
             <th scope="col">Book Name</th>
             <th scope="col">Book Image</th>
             <th scope="col">Author</th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody align="center">
@@ -18,6 +19,9 @@
             <td> <a class= "btn btn-primary" href="book_detail/{{ book.id }}" role="button"> {{ book.name }} </a> </td>
             <td> <img src="{% static book.picture_path %}" width="80" height="80"></td>
             <td> {{book.username}} </td>
+            <td>
+                <a class="btn btn-success" href="/book_addCart/{{book.id}}" role="button">Add to Cart</a>
+            </td>
         </tr>
     {% endfor %}
     </tbody>

@@ -15,4 +15,7 @@ urlpatterns = [
     path('book_message', views.book_message, name='book_message'),
     path('book_imessage', views.book_imessage, name='book_imessage'),
     path('messagebox', views.messagebox, name='messagebox'),
+    path('book_addCart/<int:book_id>', views.book_addCart, name='book_addCart'),
+    path('shoppingcart', views.shoppingcart, name='shoppingcart'),
+    path('book_deleteCart/<int:cart_id>', views.book_deleteCart, name='book_deleteCart'),
 ]

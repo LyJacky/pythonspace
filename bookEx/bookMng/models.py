@@ -56,3 +56,12 @@ class IndivMessages(models.Model):
     def __str__(self):
         return str(self.id) + ' Username: ' + str(self.username) + ', Recipient: ' + str(self.receiver)
 
+class UserCart(models.Model):
+    name = models.CharField(max_length=200, default="Anonymous")
+    username = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
+    bookId = models.ForeignKey(Book, blank=True, null=True, on_delete=models.CASCADE)
+    price = models.DecimalField(decimal_places=2, max_digits=6)
+
+    def __str__(self):
+        return str(self.id)
+
