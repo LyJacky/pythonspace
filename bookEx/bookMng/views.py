@@ -250,6 +250,7 @@ def search(request):
         })
 
 
+@login_required(login_url=reverse_lazy('login'))
 def messagebox(request):
     messages = Messages.objects.all()
     imessages = IndivMessages.objects.filter(receiver=request.user)
@@ -264,7 +265,7 @@ def messagebox(request):
 
                   })
 
-
+@login_required(login_url=reverse_lazy('login'))
 def book_message(request):
     if request.method == 'POST':
         form = BookMessageForm(request.POST, request.FILES)
@@ -288,6 +289,7 @@ def book_message(request):
                       # 'submitted': submitted,
                   })
 
+@login_required(login_url=reverse_lazy('login'))
 def book_imessage(request):
     user = get_user_model()
     users = user.objects.all()
