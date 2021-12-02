@@ -7,19 +7,7 @@
     <list default="true" id="b20ee38b-6609-4da1-8bdc-537c29d4b64c" name="Changes" comment="added improvement to avg, removed unnecessary html on book_message.html .">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/aboutus.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/aboutus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/book_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/book_delete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/book_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/book_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/book_imessage.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/book_imessage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/book_message.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/book_message.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/displaybooks.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/displaybooks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/messagebox.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/messagebox.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/mybooks.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/mybooks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/postbook.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/postbook.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/rating_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/rating_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/shoppingcart.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/shoppingcart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bookEx/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -263,5 +251,10 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/pythonspace$manage.coverage" NAME="manage Coverage Results" MODIFIED="1636585525015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bookEx" />
+    <SUITE FILE_PATH="coverage/pythonspace$bookEx1.coverage" NAME="bookEx1 Coverage Results" MODIFIED="1638416465107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bookEx" />
+    <SUITE FILE_PATH="coverage/pythonspace$bookEx.coverage" NAME="bookEx Coverage Results" MODIFIED="1637180481304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bookEx" />
   </component>
 </project>

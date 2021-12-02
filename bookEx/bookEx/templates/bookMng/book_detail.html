@@ -37,12 +37,14 @@ Book Details
         <td>{{ book_rating }}</td>
         <td>
             <form action="" enctype="multipart/form-data" method="post" novalidate>
-                <table>
-                    {{ form.as_table }}
-                    <tr>
-                        <td colspan="2"><input type="submit" value="Submit"></td>
-                    </tr>
-                </table>
+                <div class="rate">
+                <input type="radio" name="rating" id="rating 5" value="5" required /><label for="rating 5" title="5"></label>
+                <input type="radio" name="rating" id="rating 4" value="4" required /><label for="rating 4" title="4"></label>
+                <input type="radio" name="rating" id="rating 3" value="3" required /><label for="rating 3" title="3"></label>
+                <input type="radio" name="rating" id="rating 2" value="2" required /><label for="rating 2" title="2"></label>
+                <input type="radio" name="rating" id="rating 1" value="1" required /><label for="rating 1" title="1"></label>
+                </div>
+                <input type="submit" value="Submit">
                 {% csrf_token %}
             </form>
         </td>
