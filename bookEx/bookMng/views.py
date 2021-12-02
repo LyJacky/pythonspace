@@ -17,6 +17,7 @@ from .forms import SignUpForm
 from django.contrib.auth.decorators import login_required
 from django.db.models import Sum
 
+import random
 
 class Register(CreateView):
     template_name = 'registration/register.html'
@@ -307,7 +308,7 @@ def book_imessage(request):
                     message.save()
                     return HttpResponseRedirect('/messagebox')
         error = '1'
-        return  render(request,
+        return render(request,
                   'bookMng/book_imessage.html',
                   {
                       'form': form,
@@ -359,3 +360,15 @@ def book_deleteCart(request, cart_id):
     cartItem = UserCart.objects.get(id=cart_id)
     cartItem.delete()
     return redirect('shoppingcart')
+
+
+@login_required(login_url=reverse_lazy('login'))
+def randombook(request):
+    book = random.choice(Book.objects.all())
+    book.pic_path = book.picture.url[14:]
+    return render(request,
+                  'bookMng/randombook.html',
+                  {
+                      'item_list': MainMenu.objects.all(),
+                      'book': book,
+                  })

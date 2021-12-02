@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block title %}
-Display Books
+Random Book
 {% endblock title %}
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 {% block content %}
-<h1 align="center"> Display Books </h1>
+<h1 align="center"> Random Book </h1>
 <table class="table table-bordered table-hover border-primary">
     <thead>
         <tr align="center">
@@ -18,17 +18,17 @@ Display Books
         </tr>
     </thead>
     <tbody align="center">
-    {% for book in books %}
         <tr>
             <td> <a class= "btn btn-primary" href="book_detail/{{ book.id }}" role="button"> {{ book.name }} </a> </td>
-            <td> <img src="{% static book.picture_path %}" width="80" height="80"></td>
+            <td> <img src="{% static book.pic_path %}" width="80" height="80"></td>
             <td> {{book.username}} </td>
             <td>
                 <a class="btn btn-success" href="/book_addCart/{{book.id}}" role="button">Add to Cart</a>
             </td>
         </tr>
-    {% endfor %}
+
     </tbody>
 </table>
+
 <br>
 {% endblock content %}
