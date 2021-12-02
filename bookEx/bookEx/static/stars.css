@@ -13,10 +13,11 @@
 
 .rate > label:before{
   display: inline-block;
-  font-size: 2em;
+  font-size: 1em;
   font-family: FontAwesome;
   content: "\f005";
   padding: 2px;
+  align: center;
 }
 
 input:checked ~ label, label:hover ~ label{
