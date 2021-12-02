@@ -120,7 +120,7 @@ def book_detail(request, book_id):
             else:
                 book.avg_rating = 0
             book.save()
-            return HttpResponseRedirect('/displaybooks')
+            return HttpResponseRedirect('/book_detail/' + str(book_id))
     all_ratings = BookRating.objects.filter(book=book)
     total_rating = 0
     total_number_of_ratings = 0
