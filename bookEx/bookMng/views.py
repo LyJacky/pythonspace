@@ -332,12 +332,13 @@ def book_imessage(request):
 def shoppingcart(request):
     books = UserCart.objects.filter(username=request.user)
     totalPrice = list(books.aggregate(Sum('price')).values())[0]
+    formattedTotal = format(totalPrice, '.2f')
     return render(request,
         'bookMng/shoppingcart.html',
         {
             'item_list': MainMenu.objects.all(),
             'books': books,
-            'totalPrice': totalPrice
+            'formattedTotal': formattedTotal
         })
 
 
