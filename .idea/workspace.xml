@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b20ee38b-6609-4da1-8bdc-537c29d4b64c" name="Changes" comment="added improvement to avg, removed unnecessary html on book_message.html .">
+    <list default="true" id="b20ee38b-6609-4da1-8bdc-537c29d4b64c" name="Changes" comment="edge case where there are no ratings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/book_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookEx/templates/bookMng/book_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookEx/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookEx/bookMng/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bookEx/bookMng/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638134013356</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="edge case where there are no ratings">
+      <created>1638418037732</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1638418037732</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,14 +223,15 @@
     <MESSAGE value="addded my ratings section in book detail" />
     <MESSAGE value="fixed more bugs on rating" />
     <MESSAGE value="added delete rating" />
-    <option name="LAST_COMMIT_MESSAGE" value="added delete rating" />
+    <MESSAGE value="edge case where there are no ratings" />
+    <option name="LAST_COMMIT_MESSAGE" value="edge case where there are no ratings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/bookEx/bookMng/views.py</url>
-          <line>181</line>
+          <line>169</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -235,7 +241,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/bookEx/bookMng/views.py</url>
-          <line>172</line>
+          <line>160</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

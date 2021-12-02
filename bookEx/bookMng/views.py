@@ -89,13 +89,6 @@ def book_detail(request, book_id):
     form = BookRatingForm(request.POST, request.FILES)
     lookups = Q(book=book) & Q(username=request.user)
     results = BookRating.objects.filter(lookups).distinct()
-    # # form = CHOICES(request.POST)
-    #
-    # if form.is_valid():
-    #     selected = form.cleaned_data.get("NUMS")
-    #     print(selected)
-    #
-    #
     result = None
     for res in results:
         result = res
@@ -138,10 +131,6 @@ def book_detail(request, book_id):
         book.avg_rating = total_rating / total_number_of_ratings
     else:
         book.avg_rating = None
-        # result = BookRating()
-        # result.username = request.user
-        # result.book = book
-        # result.save()
         return render(request,
                       'bookMng/book_detail.html',
                       {
@@ -157,7 +146,6 @@ def book_detail(request, book_id):
                           'book': book,
                           'form': form,
                       })
-    # book.save()
     return render(request,
                   'bookMng/book_detail.html',
                   {
