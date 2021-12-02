@@ -1,13 +1,17 @@
+.rate > input{
+  display: none;
+}
+
 .rate{
   display: inline-block;
 }
 
-.rate{
+.rate > label{
   float: right;
   color: #6E6E6E;
 }
 
-.rate{
+.rate > label:before{
   display: inline-block;
   font-size: 2em;
   font-family: FontAwesome;
