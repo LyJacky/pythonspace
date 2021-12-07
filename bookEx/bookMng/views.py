@@ -129,7 +129,7 @@ def book_detail(request, book_id):
         total_number_of_ratings += 1
         total_rating += rating.rating
     if total_number_of_ratings != 0:
-        book.avg_rating = total_rating / total_number_of_ratings
+        book.avg_rating = round(total_rating / total_number_of_ratings,2)
     else:
         book.avg_rating = None
         return render(request,
