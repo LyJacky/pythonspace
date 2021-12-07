@@ -333,7 +333,10 @@ def book_imessage(request):
 def shoppingcart(request):
     books = UserCart.objects.filter(username=request.user)
     totalPrice = list(books.aggregate(Sum('price')).values())[0]
-    formattedTotal = format(totalPrice, '.2f')
+    if books:
+        formattedTotal = format(totalPrice, '.2f')
+    else:
+        formattedTotal = 0
     return render(request,
         'bookMng/shoppingcart.html',
         {
